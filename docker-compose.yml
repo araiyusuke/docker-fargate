@@ -1,18 +1,27 @@
-version: '3'
+version: '3.9'
 services:
-   nginx:
-     image: ecs-hands-on/nginx:latest 
-     volumes:
-       - ./docker/nginx/local/conf.d/default.conf:/etc/nginx/conf.d/default.conf 
-     ports:
+  nginx:
+
+    volumes:
+        - ./docker/nginx/local/conf.d/default.conf:/etc/nginx/conf.d/default.conf   
+    build:
+        context: .
+        dockerfile: ./docker/nginx/Dockerfile
+
+    ports:
        - 8080:80
-     expose:
+    expose:
        - 8080
-     depends_on:
+    depends_on:
        - laravel
-   laravel:
-      image: ecs-hands-on/laravel:latest
-      volumes:
+
+  laravel:
+    build:
+      context: .
+      dockerfile: ./docker/laravel/Dockerfile
+
+    volumes:
         - ./src:/application
-      env_file:
+
+    env_file:
         - ./src/.env

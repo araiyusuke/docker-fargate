@@ -6,10 +6,11 @@ RUN apt-get update && apt-get install -y \
              git \
              zip \
              unzip \
-       && composer install 
+             && composer install 
 
 RUN php artisan cache:clear \
      && php artisan config:clear \
      && php artisan route:clear \
      && php artisan view:clear
+     
 RUN chown -R www-data:www-data storage
