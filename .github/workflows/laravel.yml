@@ -23,7 +23,7 @@ jobs:
     - name: composer
       run: docker build -t ecs-hands-on/composer:latest -f ./docker/composer/Dockerfile .
     - name: composer build
-      run: docker run ecs-hands-on/composer:latest
+      run: docker run -d ecs-hands-on/composer:latest
 
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
