@@ -50,8 +50,8 @@ jobs:
 
     - name: Composer build 
       runs:
-      using: 'docker'
-      image: './docker/composer/Dockerfile'
+        using: 'docker'
+        image: './docker/composer/Dockerfile'
 
     - name: Build and Push to Docker Hub for Nginx 
       uses: docker/build-push-action@v2
