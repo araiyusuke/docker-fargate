@@ -54,10 +54,10 @@ jobs:
         tags: araiyusuke/ecs-hands-on-nginx:latest
         file: ./docker/nginx/Dockerfile
 
-     - name: Build and Push to Docker Hub for Laravel 
+    - name: Build and Push to Docker Hub for Laravel 
       uses: docker/build-push-action@v2
       with:
         context: .
         push: true
-        tags: araiyusuke/ecs-hands-on-laravel:latest
+        tags: araiyusuke/ecs-hands-on-:latest
         file: ./docker/laravel/Dockerfile
