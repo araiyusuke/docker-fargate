@@ -46,4 +46,4 @@ jobs:
         context: .
         push: true
         tags: araiyusuke/ecs-hands-on-nginx:latest
-        file: ./docker/nginx
+        file: ./docker/nginx/Dockerfile
