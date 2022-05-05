@@ -43,6 +43,7 @@ jobs:
     - name: Build and Push to Docker Hub
       uses: docker/build-push-action@v2
       with:
-        context: ./docker/nginx
+        context: .
         push: true
         tags: araiyusuke/ecs-hands-on-nginx:latest
+        working-directory: ./src
