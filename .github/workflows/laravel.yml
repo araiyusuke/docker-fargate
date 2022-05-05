@@ -10,11 +10,7 @@ jobs:
   laravel-tests:
 
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        target: ["laravel", "nginx", "docker"]
-        
+    
     steps:
     
     - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
@@ -52,6 +48,6 @@ jobs:
       
       
       with:
-        context: .
+        context: ./docker/laravel
         push: true
         tags: araiyusuke/ecs-hands-on-nginx:latest
