@@ -14,8 +14,8 @@ WORKDIR /application
 
 RUN apt-get update
 
-COPY ./docker/nginx/ecs/conf.d/default.conf /etc/nginx/conf.d/default.conf    
-
+# COPY ./docker/nginx/ecs/conf.d/default.conf /etc/nginx/conf.d/default.conf    
+COPY ./docker/nginx/local/conf.d/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=node-build /application/public /application/public/ 
 
 EXPOSE 80
